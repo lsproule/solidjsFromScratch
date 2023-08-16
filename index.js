@@ -13,12 +13,10 @@ button.onclick = () => setCount(count() + 1);
 
 createEffect(() => {
   if (show()) console.log(count());
-  else console.log(untrack(() => count2()));
   h1.textContent = `Cuenta es ${count()}`;
 });
 
 console.log(sum());
-setShow(false);
 setCount(10);
 console.log(sum());
 setCount2(10);
