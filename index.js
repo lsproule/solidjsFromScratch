@@ -6,8 +6,10 @@ const [show, setShow] = createSignal(true);
 
 const sum = createMemo(() => count() + count2());
 
-h1 = document.createElement("h1");
-button = document.createElement("button");
+const h1 = document.createElement("h1");
+const button = document.createElement("button");
+button.textContent = "+1";
+button.onclick = () => setCount(count() + 1);
 
 createEffect(() => {
   if (show()) console.log(count());
@@ -22,4 +24,4 @@ console.log(sum());
 setCount2(10);
 
 document.body.textContent = "";
-document.body.append([h1, button]);
+document.body.append(...[h1, button]);
